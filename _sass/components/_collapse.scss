@@ -1,0 +1,24 @@
+
+.collapse-content {
+  > .title {
+    margin-bottom: 0;
+  }
+  > .body {
+    display: block;
+    overflow: hidden;
+    &._is-closed {
+      display: none;
+    }
+  }
+  > .toggle {
+      > .icon {
+        transition: transform 0.3s ease-in-out;
+        transform: rotate(90deg);
+      }
+      &._is-open {
+        > .icon {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+}

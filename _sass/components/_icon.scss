@@ -1,0 +1,16 @@
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  fill: none; // Using outline icons
+  &.-primary {
+      stroke: $brand-color-primary;
+  }
+  &.-default {
+    stroke: $grey;
+  }
+  &._mini {
+    width: 16px;
+    height: 16px;
+  }
+}

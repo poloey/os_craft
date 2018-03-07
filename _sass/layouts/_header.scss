@@ -1,0 +1,13 @@
+.site-header {
+  height: 60px;
+  @include bp(laptop) {
+    height: 80px;
+  }
+}
+.brand-header {
+  display: block;
+  float: left;
+  width: 60%;
+  max-width: 320px;
+  padding: 13px 10px;
+}

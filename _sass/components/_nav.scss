@@ -1,0 +1,143 @@
+.nav-trigger {
+  position: absolute;
+  display: block;
+  right: 10px;
+  top: 14px;
+  width: 40px;
+  padding-top: 18px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: $brand-color-primary;
+  z-index: 2;
+  &:visited {
+    color: $brand-color-primary;
+  }
+  @include bp(laptop) {
+    display: none;
+  }
+  > .burger,
+  &::before,
+  &::after {
+    border-radius: 1px;
+    position: absolute;
+    display: block;
+    left: 50%;
+    height: 2px;
+    width: 30px;
+    content: '';
+    background: $brand-color-primary;
+    margin-left: -15px;
+    transition: all 0.2s ease;
+  }
+  > .burger { top: 8px; opacity: 1;}
+  &::before { top: 0; }
+  &::after { top: 16px; }
+
+  &._is-open {
+    > .burger {
+      opacity: 0;
+    }
+    &::before,
+    &::after {
+      top: 8px;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.nav-header {
+  position: absolute;
+  display: none;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  background: #fff;
+  z-index: 1;
+  @include bp(laptop) {
+    display: block;
+    position: relative;
+    float: right;
+    width: auto;
+    text-align: right;
+    background: none;
+    box-shadow: none;
+  }
+  > .item {
+    display: block;
+    padding: 10px 26px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $brand-color-primary;
+    &:visited {
+      color: $brand-color-primary;
+    }
+    &._is-live {
+      position: relative;
+      color: #D0011B;
+      &::before {
+        position: absolute;
+        left: 10px;
+        top: 16px;
+        font-size: 28px;
+        content: '';
+        background: #D0011B;
+        width: 6px;
+        height: 6px;
+        border-radius: 4px;
+        animation-name: blink;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        @include bp(laptop) {
+          top: 26px;
+        }
+      }
+    }
+    @include bp(laptop) {
+      display: inline-block;
+      padding: 17px 18px;
+    }
+  }
+}
+
+@keyframes blink {
+  0% { box-shadow: 0 0 0 0 rgba(#D0011B, 0) }
+  50% { box-shadow: 0 0 0 8px rgba(#D0011B, 0.1), 0 0 0 4px rgba(#D0011B, 0.2) }
+  100% { box-shadow: 0 0 0 8px rgba(#D0011B, 0)}
+}
+
+.-inline {
+  text-align: center;
+  padding: 10px 0;
+  > .item {
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
+  }
+}
+
+.nav-footer {
+  @include bp(laptop) {
+    text-align: left;
+    width: 50%;
+  }
+  > .item {
+    color: $grey;
+    &:visited {
+      color: $grey;
+    }
+  }
+  > .brand {
+    .st0,
+    .st1 {
+      fill: #fff;
+    }
+  }
+}

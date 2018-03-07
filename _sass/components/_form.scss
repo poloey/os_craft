@@ -1,0 +1,87 @@
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  > .input {
+    position: relative;
+    width: 100%;
+    padding: 15px 20px;
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+    border: none;
+    background: $light-grey;
+    &.-error {
+      border: solid 1px #DB4D4D;
+      outline: #DB4D4D;
+      background: scale_color(#DB4D4D, $lightness: 80%);
+    }
+  }
+  > .label {
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  > .button {
+    align-self: flex-start;
+    font-size: 16px;
+  }
+  > .help-text {
+    display: block;
+    position: relative;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: $grey;
+    &.-error {
+      color: #DB4D4D;
+    }
+  }
+}
+
+.email-form {
+  display: flex;
+  flex-flow: column;
+  @include bp(laptop) {
+    flex-flow: row;
+    justify-content: center;
+  }
+  padding: 10px;
+  > .label {
+    text-align: center;
+    @include bp(laptop) {
+      margin: 8px 30px;
+    }
+  }
+  > form > .form-group {
+    @include bp(laptop) {
+      width: 350px;
+    }
+    @include bp(desktop) {
+      width: 450px;
+    }
+  }
+}
+
+.form-social {
+  @include bp(laptop) {
+    padding-top: 5px;
+  }
+}
+
+.form-group {
+  position: relative;
+  > .input {
+    box-sizing: border-box;
+    font-size: 16px;
+    display: inline-block;
+  	padding: 15px 20px;
+  	margin: 0;
+  	border: none;
+    background: $light-grey;
+  }
+  > .button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 14px;
+  }
+}

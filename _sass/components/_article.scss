@@ -1,0 +1,13 @@
+.episode-article {
+  padding: 20px;
+  @include bp(laptop) {
+    padding: 0 50px;
+  }
+  > .title {
+    margin: 0;
+    font-size: 26px;
+  }
+  > .meta {
+    color: $grey;
+  }
+}
